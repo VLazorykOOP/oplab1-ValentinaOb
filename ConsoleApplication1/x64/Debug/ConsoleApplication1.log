@@ -1,0 +1,23 @@
+﻿  ConsoleApplication1.cpp
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(40,80): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(60,79): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(88,68): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(163,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(177,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(189,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(198,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(200,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(203,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(204,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(210,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(230,68): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(324,89): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(334,79): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(343,89): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(355,81): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(372,80): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(383,80): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(391,90): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(407,31): warning C4101: 'e': unreferenced local variable
+D:\Chnu\Summer\ConsoleApplication1\ConsoleApplication1.cpp(411,23): warning C4101: 'e': unreferenced local variable
+  ConsoleApplication1.vcxproj -> D:\Chnu\Summer\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
