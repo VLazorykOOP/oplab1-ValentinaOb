@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-ConsoleApplication1",
+      "appliesTo": "ConsoleApplication2/ConsoleApplication1.cpp",
+      "type": "launch"
+    }
+  ]
+}

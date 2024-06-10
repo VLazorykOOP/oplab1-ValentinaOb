@@ -87,7 +87,7 @@ double Tfun(double u, double v, string text) throw (double) {
     else {
         r = 0;
     }
-    
+
     string words[21];
     string ch;
     int j = 0;
@@ -128,7 +128,7 @@ double Tfun(double u, double v, string text) throw (double) {
 
     file.close();
 
-    term = u*u+v*v-r*(u+v)+r*r;
+    term = u * u + v * v - r * (u + v) + r * r;
 
     return term;
 
@@ -136,17 +136,17 @@ double Tfun(double u, double v, string text) throw (double) {
 
 double func(double u, double v, string text) throw (double) {
 
-    double term=0;
+    double term = 0;
     if (u <= 0.5 && u >= -0.5) {
-        term = Tfun(0,v,text);
+        term = Tfun(0, v, text);
     }
-    else if (u > 0.5 && u < -0.5 && u<v) {
+    else if (u > 0.5 && u < -0.5 && u < v) {
         term = Tfun(u, v, text);
     }
     else if (u > 0.5 && u < -0.5 && u > v) {
         term = Tfun(u, 0, text) - Tfun(0, v, "set");
     }
-    
+
     return term;
 
 }
@@ -200,19 +200,19 @@ double T(double x1) throw (A3_Error, A4_Error, double) {
     ifstream file(name);
     if (file.is_open()) {
         for (int i = 0; i < 2; i++) {
-        file >> s[i];
+            file >> s[i];
         }
-    }   
+    }
     else {
         throw A3_Error("A3");   //  Wnk
     }
-       
+
     if (err != true) {
         if (x1 <= 5 && x1 >= -5) {
             throw A4_Error("A4");   //  Gnk
         }
     }
-    
+
 
     string ch;
     str = s[0];
@@ -292,7 +292,7 @@ double T(double x1) throw (A3_Error, A4_Error, double) {
 double U(double x1) throw (A3_Error, A4_Error, double) {
     double term;
     string name;
-    
+
     ofstream file2("dat2.dat");
     if (file2.is_open()) {
         string str = "-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10";
@@ -316,7 +316,7 @@ double U(double x1) throw (A3_Error, A4_Error, double) {
     string str;
     string s[2];
     ifstream file(name);
-    
+
     if (file.is_open()) {
         for (int i = 0; i < 2; i++) {
             file >> s[i];
@@ -330,7 +330,7 @@ double U(double x1) throw (A3_Error, A4_Error, double) {
         if (x1 <= 10 && x1 >= -10) {
             throw A4_Error("A4");   //  Gnk
         }
-    }   
+    }
 
 
     string ch;
@@ -412,8 +412,8 @@ double U(double x1) throw (A3_Error, A4_Error, double) {
 
 double Wnr(double x, double y) throw (double) {
     double term;
-    if (x>y) {
-        term = T(x)-U(x)* U(y);
+    if (x > y) {
+        term = T(x) - U(x) * U(y);
     }
     else {
         term = T(x) * T(y) - U(x);
@@ -447,25 +447,25 @@ double gold(double x, double y, double z) throw (double) {
 
 
 double Qnr(double x, double y) throw (A2_Error, A3_Error, A4_Error, Restart_Error, double) {
-    double term=0;
+    double term = 0;
     if (y == 0) {
         term = 1;
     }
-    else if (x>y && (10*y*y*y*y-x>=0)&&(y!=0)) {
-        term = x*x*sqrt(10 * y * y * y * y - x);
+    else if (x > y && (10 * y * y * y * y - x >= 0) && (y != 0)) {
+        term = x * x * sqrt(10 * y * y * y * y - x);
     }
-    else if (x <= y && (3*x > y)&&(10*x*x*x*x-y>=0) && (y != 0)) {
+    else if (x <= y && (3 * x > y) && (10 * x * x * x * x - y >= 0) && (y != 0)) {
         term = x * x * x * log(10 * x * x * x * x - y);
     }
-    else if (x <= y && (3 * x <= y)&&(y * y * y * y - 2*x >= 0) && (y != 0)) {
-        term = y * y * sqrt(y * y * y * y - 2*x);
+    else if (x <= y && (3 * x <= y) && (y * y * y * y - 2 * x >= 0) && (y != 0)) {
+        term = y * y * sqrt(y * y * y * y - 2 * x);
     }
     else {
-        if (10*y*y-x<0) {
+        if (10 * y * y - x < 0) {
             //z = 1.25;   //  !!!    Rnk
             throw A2_Error("A2");
         }
-        else if (y * y - 2*x < 0) {
+        else if (y * y - 2 * x < 0) {
             //z = 1.5;   //  !!!    Rnk
             throw A2_Error("A2");
         }
@@ -481,7 +481,7 @@ double Qnr(double x, double y) throw (A2_Error, A3_Error, A4_Error, Restart_Erro
 double Qnk(double x, double y) throw (double) {
     double term;
 
-    term = 10.5 * Qnr(2*x, y) - 3.75* Qnr(x, 2* y);
+    term = 10.5 * Qnr(2 * x, y) - 3.75 * Qnr(x, 2 * y);
 
     return term;
 }
@@ -490,7 +490,7 @@ double Rnk(double x, double y, double z) throw (double) {
     if (rest == true) {
         y = 0;
     }
-    term = x * Qnk(x, y) + y * Qnk(y, x)+z*Qnk(z,x);
+    term = x * Qnk(x, y) + y * Qnk(y, x) + z * Qnk(z, x);
 
     return term;
 }
@@ -498,7 +498,7 @@ double Rnk(double x, double y, double z) throw (double) {
 double func(double x, double y, double z) throw (double) {
 
     double term;
-    term = x*Rnk(x, y,z) + Rnk(y, z,x) * Rnk(z,x, y);
+    term = x * Rnk(x, y, z) + Rnk(y, z, x) * Rnk(z, x, y);
     return term;
 
 }
@@ -507,7 +507,7 @@ double func(double x, double y, double z) throw (double) {
 
 
 double Qnr1(double x, double y) throw (double) {
-    double term=0;
+    double term = 0;
     if (y == 0) {
         term = 1;
     }
@@ -518,7 +518,7 @@ double Qnr1(double x, double y) throw (double) {
         term = x * x * x * x * y;
     }
     else if (x <= y && (3 * x <= y) && (y != 0)) {
-        term = y * y *y* y * x;
+        term = y * y * y * y * x;
     }
 
     return term;
@@ -551,7 +551,7 @@ double func1(double x, double y, double z) throw (double) {
 double T1(double x1) {
     double term;
     term = atan(acos(sin(2 * x1)));
-        return term;
+    return term;
 }
 double U1(double x1) {
     double term;
@@ -562,10 +562,10 @@ double U1(double x1) {
 double Wnr1(double x, double y) throw (double) {
     double term;
     if (x > y) {
-        term = T1(x) - 0.9*U1(x) * U1(y);
+        term = T1(x) - 0.9 * U1(x) * U1(y);
     }
     else {
-        term = 0.9*T1(x) * T1(y) - U1(x);
+        term = 0.9 * T1(x) * T1(y) - U1(x);
     }
 
     return term;
@@ -740,7 +740,7 @@ double U2(double x1) throw (double) {
         }
     }
     else {
-        return 0; 
+        return 0;
     }
 
 
@@ -824,10 +824,10 @@ double U2(double x1) throw (double) {
 double Wnr2(double x, double y) throw (double) {
     double term;
     if (x > y) {
-        term = 0.9*T2(x) - U2(x) * U2(y);
+        term = 0.9 * T2(x) - U2(x) * U2(y);
     }
     else {
-        term = T2(x) * 2*T2(y) -0.9* U2(x);
+        term = T2(x) * 2 * T2(y) - 0.9 * U2(x);
     }
 
     return term;
@@ -844,14 +844,14 @@ double Gnk2(double x, double y, double z) throw (double) {
     double term;
 
     if (x * x + y * y + z * z >= 0.001) {
-        term = x* Wnk2((x / (sqrt(x * x + y * y + z * z))),(x / (sqrt(x * x + y * y + z * z)))) + 
-            y* Wnk2((y / (sqrt(x * x + y * y + z * z))), (x / (sqrt(x * x + y * y + z * z))))+ 
+        term = x * Wnk2((x / (sqrt(x * x + y * y + z * z))), (x / (sqrt(x * x + y * y + z * z)))) +
+            y * Wnk2((y / (sqrt(x * x + y * y + z * z))), (x / (sqrt(x * x + y * y + z * z)))) +
             z * Wnk2((z / (sqrt(x * x + y * y + z * z))), (x / (sqrt(x * x + y * y + z * z))));
     }
     else {
         term = 0;
     }
-    
+
 
     return term;
 }
@@ -869,7 +869,7 @@ double gold2(double x, double y, double z) throw (double) {
 
 int main() {
     double x, y, z;
-    double u,v, result;
+    double u, v, result;
     string text;
     cout << " Input x y z text ";
     cin >> x >> y >> z >> text;
@@ -880,7 +880,6 @@ int main() {
         result = func(u, v, text);
     }
     catch (A2_Error& e) {
-        cout << " \n Error: ";
         e.Message();
         err = true;
         u = func1(x, y, z);
@@ -889,7 +888,6 @@ int main() {
         result = func(u, v, text);
     }
     catch (A3_Error& e) {
-        cout << " \n Error: ";
         e.Message();
         err = true;
         u = func(x, y, z);
@@ -904,7 +902,7 @@ int main() {
         u = func(x, y, z);
         v = gold2(x, y, 2 * z);
 
-        result = func(u, v, text);      
+        result = func(u, v, text);
     }
     catch (Restart_Error& e) {
         cout << " \n Error: ";

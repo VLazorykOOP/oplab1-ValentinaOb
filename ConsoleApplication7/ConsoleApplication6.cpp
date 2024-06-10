@@ -55,31 +55,51 @@ public:
 };
 
 
-void one(){
+void one() {
 
     cout << "Input time (hour: min): ";
 
-    double h, m;
+    int time[2];
     string inp;
+    string data = "";
+    int k = 0;
 
     cin >> inp;
 
     try {
-        if (inp[1] != ':') {
+
+        for (int i = 0; i < inp.length(); i++) {
+            if (inp[i] != ':') {
+                data += inp[i];
+            }
+            else {
+                time[0] = stod(data);
+                data = ' ';
+            }
+        }
+        time[1] = stod(data);
+
+        for (int i = 0; i < inp.length(); i++) {
+            if (inp[i] == ':') {
+                k += 1;
+            }
+        }
+
+        if (k != 1) {
             throw Format_Error("F_E");
         }
 
-        h = double(inp[0]);
-        m = double(inp[2]);
+        //h = double(inp[0]);
+        //m = double(inp[2]);
 
-        if (h < 0 && h>23) {
+        if (time[0] < 0 || time[0]>23) {
             throw H_Error("H_E");
         }
-        if (m < 0 && m>60) {
+        if (time[1] < 0 || time[1]>60) {
             throw M_Error("M_E");
         }
 
-        cout << "Yes!"<<endl;
+        cout << "Yes!" << endl;
     }
     catch (Format_Error& e) {
         e.Message();
@@ -99,18 +119,18 @@ void two() {
 
     cout << "Input n, m, f, g: ";
 
-    cin >> n>>m >> f >> g;
+    cin >> n >> m >> f >> g;
 
     try {
-        if (n==0||m==0) {
+        if (n == 0 || m == 0) {
             if (n == 0) {
                 throw Zero("N");
             }
             else {
                 throw Zero("M");
-            }            
+            }
         }
-        if(f - 200 < 0 || 2 * g < 0){
+        if (f - 200 < 0 || sin(2 * g) < 0) {
             if (f - 200 < 0) {
                 throw Sq("f - 200");
             }
@@ -120,9 +140,8 @@ void two() {
         }
         else {
             fun = 100 / n + 130 / m + sqrt(f - 200) + sin(2 * g);
-        }        
-
-        cout << "fun: "<<fun<<endl;
+        }
+        cout << "fun: " << fun << endl;
     }
     catch (Zero& e) {
         e.Message();
@@ -150,7 +169,7 @@ void three() {
                 throw Zero("M");
             }
         }
-        if (f - 200 < 0 || 2 * g < 0) {
+        if (f - 200 < 0 || sin(2 * g) < 0) {
             if (f - 200 < 0) {
                 throw Sq("f - 200");
             }
